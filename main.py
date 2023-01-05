@@ -65,16 +65,16 @@ def enter_product_data(product_name, open_market_data, smart_store_data, kakao_s
 
     if auction in account:
         worksheet_singular['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + open_market_data)
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
     elif g_market in account:
         worksheet_singular['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + open_market_data)
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
     elif eleven_st in account:
         worksheet_singular['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + open_market_data)
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
     elif we_market in account:
         worksheet_singular['J' + str(product_order)].value = we_market_data
-        print('J' + str(product_order) + "값 수정 : " + we_market_data)
+        print('J' + str(product_order) + "값 수정 : " + str(we_market_data))
 
     workbook_singular.save("./단일상품.xlsx")
     workbook_singular.close()
@@ -99,13 +99,13 @@ def enter_product_data(product_name, open_market_data, smart_store_data, kakao_s
 
     if smart_store in account:
         worksheet_common['J' + str(product_order)].value = smart_store_data
-        print('J' + str(product_order) + "값 수정 :" + smart_store_data)
+        print('J' + str(product_order) + "값 수정 :" + str(smart_store_data))
     elif lotte_on in account:
         worksheet_common['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + open_market_data)
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
     elif kakao_store in account:
         worksheet_common['J' + str(product_order)].value = kakao_store_data
-        print('J' + str(product_order) + "값 수정 :" + kakao_store_data)
+        print('J' + str(product_order) + "값 수정 :" + str(kakao_store_data))
 
     worksheet_common.save("./단일상품.xlsx")
     worksheet_common.close()
