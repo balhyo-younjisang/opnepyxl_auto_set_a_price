@@ -65,16 +65,16 @@ def enter_product_data(product_name, open_market_data, smart_store_data, kakao_s
 
     if auction in account:
         worksheet_singular['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data) + "오픈 스토어 값이 입력되었습니다.")
     elif g_market in account:
         worksheet_singular['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data) + "오픈 스토어 값이 입력되었습니다.")
     elif eleven_st in account:
         worksheet_singular['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data) + "오픈 스토어 값이 입력되었습니다.")
     elif we_market in account:
         worksheet_singular['J' + str(product_order)].value = we_market_data
-        print('J' + str(product_order) + "값 수정 : " + str(we_market_data))
+        print('J' + str(product_order) + "값 수정 : " + str(we_market_data) + "위메프 값이 입력되었습니다.")
 
     workbook_singular.save("./단일상품.xlsx")
     workbook_singular.close()
@@ -87,8 +87,6 @@ def enter_product_data(product_name, open_market_data, smart_store_data, kakao_s
     lotte_on = "롯데ON"
     kakao_store = "카카오톡 스토어"
 
-    account = worksheet_common['C' + str(product_order)].value
-
     product_order = 0
     for i in range(2, worksheet_common.max_row):
         if worksheet_common['E' + str(i)].value == product_name:
@@ -97,18 +95,20 @@ def enter_product_data(product_name, open_market_data, smart_store_data, kakao_s
         print("같은 이름의 상품을 발견하지 못했습니다.")
         return
 
+    account = worksheet_common['C' + str(product_order)].value
+
     if smart_store in account:
         worksheet_common['J' + str(product_order)].value = smart_store_data
-        print('J' + str(product_order) + "값 수정 :" + str(smart_store_data))
+        print('J' + str(product_order) + "값 수정 :" + str(smart_store_data) + "스마트 스토어 값이 입력되었습니다.")
     elif lotte_on in account:
         worksheet_common['J' + str(product_order)].value = open_market_data
-        print('J' + str(product_order) + "값 수정 :" + str(open_market_data))
+        print('J' + str(product_order) + "값 수정 :" + str(open_market_data) + "오픈 스토어 값이 입력되었습니다.")
     elif kakao_store in account:
         worksheet_common['J' + str(product_order)].value = kakao_store_data
-        print('J' + str(product_order) + "값 수정 :" + str(kakao_store_data))
+        print('J' + str(product_order) + "값 수정 :" + str(kakao_store_data) + "카카오 스토어 값이 입력되었습니다.")
 
-    worksheet_common.save("./일반상품.xlsx")
-    worksheet_common.close()
+    workbook_common.save("./일반상품.xlsx")
+    workbook_common.close()
 
 
 def enter_platform_data(category, name, price):
