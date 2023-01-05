@@ -107,7 +107,7 @@ def enter_product_data(product_name, open_market_data, smart_store_data, kakao_s
         worksheet_common['J' + str(product_order)].value = kakao_store_data
         print('J' + str(product_order) + "값 수정 :" + str(kakao_store_data))
 
-    worksheet_common.save("./단일상품.xlsx")
+    worksheet_common.save("./일반상품.xlsx")
     worksheet_common.close()
 
 
